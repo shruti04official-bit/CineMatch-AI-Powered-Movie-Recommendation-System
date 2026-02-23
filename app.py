@@ -55,7 +55,22 @@ def compute_similarity(data):
     return cosine_similarity(tfidf_matrix, tfidf_matrix)
 
 movies = movies.drop_duplicates(subset="title").reset_index(drop=True)
-cosine_sim = compute_similarity(movies)
+movies = movies.head(3000)
+def get_content_candidates(title, top_k=20):
+    if title not in indices:
+        return []
+
+    idx = indices[title]
+
+    # Compute similarity only for selected movie
+    sim_scores = cosine_similarity(
+        tfidf_matrix[idx],
+        tfidf_matrix
+    ).flatten()
+
+    sim_indices = sim_scores.argsort()[::-1][1:top_k+1]
+
+    return [(i, sim_scores[i]) for i in sim_indices]
 indices = pd.Series(movies.index, index=movies["title"])
 
 # -----------------------------
