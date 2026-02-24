@@ -1,107 +1,113 @@
-# 🎬 CineMatch – AI-Powered Hybrid Movie Recommendation System
+🎬 Content-Based Movie Recommendation System
 
-CineMatch is a machine learning–based hybrid movie recommendation system that combines content-based filtering and collaborative filtering to generate personalized movie suggestions. The application is built using Python and deployed using Streamlit Cloud.
+A production-ready Content-Based Movie Recommendation System built using Python, Streamlit, and Scikit-Learn.
+The system recommends movies by analyzing genre similarity using TF-IDF vectorization and cosine similarity.
 
-🔗 **Live Application:**  
-https://cinematch-ai04.streamlit.app/
+The application is deployed on Render for public access.
 
----
+🔗 Live Demo:
+https://cinematch-ai-powered-movie.onrender.com/
 
-## 📌 Project Overview
+📌 Project Overview
 
-The objective of this project is to design and deploy an intelligent movie recommendation system capable of suggesting relevant movies based on both movie metadata and user interaction patterns.
+This project implements a content-based filtering approach to recommend movies based on their genre similarity.
 
-The system integrates:
-- Content similarity using TF-IDF and cosine similarity
-- Collaborative filtering using user rating data
-- A hybrid strategy to improve recommendation accuracy
+Instead of relying on other users’ ratings, the system analyzes movie metadata (genres) to identify and suggest similar movies.
 
----
+The system is optimized for cloud deployment and includes caching mechanisms for performance efficiency.
 
-## 🚀 Key Features
+🧠 How It Works
+1️⃣ Data Preprocessing
 
-- Hybrid recommendation engine (Content + Collaborative)
-- TF-IDF vectorization for feature extraction
-- Cosine similarity for movie matching
-- Personalized suggestions based on user ID
-- Interactive UI built with Streamlit
-- Cloud deployment for public access
+Loads movie and rating datasets using Pandas
 
----
+Handles missing values
 
-## 🛠 Tech Stack
+Removes duplicate titles
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Streamlit
-- Joblib
+Reduces dataset size for efficient deployment
 
----
+2️⃣ Feature Engineering
 
-## 📂 Project Structure
+Extracts movie genres
 
-```
-CineMatch-AI-Powered-Movie-Recommendation-System/
+Applies TF-IDF Vectorization to convert text data into numerical features
+
+3️⃣ Similarity Computation
+
+Computes Cosine Similarity
+
+Identifies top similar movies dynamically
+
+Returns configurable Top-N recommendations
+
+🚀 Features
+
+Interactive Streamlit interface
+
+Sidebar movie selection
+
+Dynamic similarity computation
+
+Cold-start user handling
+
+Cached dataset & model loading
+
+Optimized for free-tier cloud hosting
+
+🛠️ Tech Stack
+Category	Technology
+Language	Python 3
+Frontend	Streamlit
+Data Processing	Pandas
+NLP	TF-IDF (Scikit-Learn)
+Similarity Metric	Cosine Similarity
+Deployment	Render
+📂 Project Structure
+Content-Based-Movie-Recommender/
 │
-├── app.py
-├── movies.csv
-├── ratings.csv
-├── train_svd.py
-├── requirements.txt
+├── app.py               # Main Streamlit application
+├── movies.csv           # Movies dataset
+├── ratings.csv          # User ratings dataset
+├── requirements.txt     # Project dependencies
 └── README.md
-```
-
----
-
-## ⚙️ Installation & Local Setup
-
-Clone the repository:
-
-```bash
+⚙️ Installation & Local Setup
+1️⃣ Clone Repository
 git clone https://github.com/shruti04official-bit/CineMatch-AI-Powered-Movie-Recommendation-System.git
 cd CineMatch-AI-Powered-Movie-Recommendation-System
-```
-
-Install dependencies:
-
-```bash
+2️⃣ Create Virtual Environment
+python -m venv .venv
+.venv\Scripts\activate      # Windows
+3️⃣ Install Dependencies
 pip install -r requirements.txt
-```
-
-Run the application:
-
-```bash
+4️⃣ Run Application
 streamlit run app.py
-```
+🌐 Deployment
 
----
+The application is deployed on Render using:
 
-## 🌐 Deployment
+Build Command
 
-The application is deployed on Streamlit Community Cloud by:
+pip install -r requirements.txt
 
-1. Pushing the project to GitHub
-2. Connecting the repository to Streamlit Cloud
-3. Configuring `app.py` as the main entry point
-4. Managing dependencies via `requirements.txt`
-5. Deploying and rebooting the app
+Start Command
 
----
+streamlit run app.py --server.port 10000 --server.address 0.0.0.0
+📈 Future Enhancements
 
-## 📊 Future Improvements
+Add collaborative filtering
 
-- Integration with TMDB API for movie posters
-- Advanced hybrid weighting techniques
-- Real-time personalization improvements
-- UI enhancement with grid layout and posters
-- Model evaluation metrics and performance analysis
+Integrate TMDB API for movie posters
 
----
+Improve ranking logic
 
-## 👩‍💻 Author
+Deploy with database-backed user tracking
 
-Shruti Kumari 
-Machine Learning Enthusiast | AI Developer  
-GitHub: https://github.com/shruti04official-bit
+Add advanced recommendation evaluation metrics
+
+👩‍💻 Author
+
+Shruti
+Computer Science Undergraduate
+Machine Learning & AI Enthusiast
+
