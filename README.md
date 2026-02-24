@@ -127,6 +127,8 @@ Database-backed user personalization
 Improved UI with movie card grid layout
 
 👩‍💻 Author
+Shruti Kumari
+Machine Learning Enthusiast | AI Developer
 
 
 
