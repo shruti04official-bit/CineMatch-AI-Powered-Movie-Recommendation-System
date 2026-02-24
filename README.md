@@ -102,6 +102,6 @@ The application is deployed on Streamlit Community Cloud by:
 
 ## 👩‍💻 Author
 
-Shruti Acharya  
+Shruti Kumari 
 Machine Learning Enthusiast | AI Developer  
 GitHub: https://github.com/shruti04official-bit
