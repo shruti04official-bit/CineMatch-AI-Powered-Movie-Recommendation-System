@@ -1,113 +1,139 @@
-🎬 Content-Based Movie Recommendation System
+Content-Based Movie Recommendation System
+1. Introduction
 
-A production-ready Content-Based Movie Recommendation System built using Python, Streamlit, and Scikit-Learn.
-The system recommends movies by analyzing genre similarity using TF-IDF vectorization and cosine similarity.
+This project implements a Content-Based Movie Recommendation System using Python and Streamlit.
+The system recommends movies based on genre similarity by applying TF-IDF vectorization and cosine similarity.
 
 The application is deployed on Render for public access.
 
-🔗 Live Demo:
+Live Application:
 https://cinematch-ai-powered-movie.onrender.com/
 
-📌 Project Overview
+2. Objective
 
-This project implements a content-based filtering approach to recommend movies based on their genre similarity.
+The objective of this project is to:
 
-Instead of relying on other users’ ratings, the system analyzes movie metadata (genres) to identify and suggest similar movies.
+Build a scalable content-based recommendation engine
 
-The system is optimized for cloud deployment and includes caching mechanisms for performance efficiency.
+Convert textual genre data into numerical feature vectors
 
-🧠 How It Works
-1️⃣ Data Preprocessing
+Compute similarity between movies
 
-Loads movie and rating datasets using Pandas
+Deploy the system on a cloud platform
 
-Handles missing values
+3. Methodology
+3.1 Data Processing
 
-Removes duplicate titles
+Movies and ratings datasets are loaded using Pandas
 
-Reduces dataset size for efficient deployment
+Duplicate titles are removed
 
-2️⃣ Feature Engineering
+Missing values are handled
 
-Extracts movie genres
+Dataset size is optimized for deployment performance
 
-Applies TF-IDF Vectorization to convert text data into numerical features
+3.2 Feature Engineering
 
-3️⃣ Similarity Computation
+Movie genres are extracted
 
-Computes Cosine Similarity
+TF-IDF vectorization is applied to transform text into numerical vectors
 
-Identifies top similar movies dynamically
+3.3 Similarity Computation
 
-Returns configurable Top-N recommendations
+Cosine similarity is calculated between movie vectors
 
-🚀 Features
+Top-N similar movies are retrieved dynamically
 
-Interactive Streamlit interface
+3.4 Performance Optimization
 
-Sidebar movie selection
+Dataset caching using @st.cache_data
 
-Dynamic similarity computation
+TF-IDF matrix caching using @st.cache_resource
 
-Cold-start user handling
+Reduced dataset size for cloud hosting efficiency
 
-Cached dataset & model loading
+4. System Architecture
 
-Optimized for free-tier cloud hosting
+Input (Selected Movie)
+↓
+Genre Extraction
+↓
+TF-IDF Vectorization
+↓
+Cosine Similarity Computation
+↓
+Top-N Similar Movies
+↓
+Recommendation Display (Streamlit UI)
 
-🛠️ Tech Stack
-Category	Technology
-Language	Python 3
-Frontend	Streamlit
-Data Processing	Pandas
-NLP	TF-IDF (Scikit-Learn)
-Similarity Metric	Cosine Similarity
-Deployment	Render
-📂 Project Structure
-Content-Based-Movie-Recommender/
+5. Features
+
+Interactive web interface using Streamlit
+
+Movie selection from dropdown
+
+Configurable number of recommendations
+
+Efficient similarity computation
+
+Cloud deployment ready
+
+6. Technology Stack
+
+Python 3
+
+Streamlit
+
+Pandas
+
+Scikit-Learn (TF-IDF, Cosine Similarity)
+
+Render (Deployment Platform)
+
+7. Project Structure
+Movie-Recommendation-System/
 │
-├── app.py               # Main Streamlit application
-├── movies.csv           # Movies dataset
-├── ratings.csv          # User ratings dataset
-├── requirements.txt     # Project dependencies
+├── app.py
+├── movies.csv
+├── ratings.csv
+├── requirements.txt
 └── README.md
-⚙️ Installation & Local Setup
-1️⃣ Clone Repository
+8. Installation and Setup
+Step 1: Clone Repository
 git clone https://github.com/shruti04official-bit/CineMatch-AI-Powered-Movie-Recommendation-System.git
 cd CineMatch-AI-Powered-Movie-Recommendation-System
-2️⃣ Create Virtual Environment
+Step 2: Create Virtual Environment
 python -m venv .venv
-.venv\Scripts\activate      # Windows
-3️⃣ Install Dependencies
+.venv\Scripts\activate
+Step 3: Install Dependencies
 pip install -r requirements.txt
-4️⃣ Run Application
+Step 4: Run Application
 streamlit run app.py
-🌐 Deployment
+9. Deployment
 
-The application is deployed on Render using:
+The application is deployed on Render.
 
-Build Command
+Build Command:
 
 pip install -r requirements.txt
 
-Start Command
+Start Command:
 
 streamlit run app.py --server.port 10000 --server.address 0.0.0.0
-📈 Future Enhancements
+10. Future Improvements
 
-Add collaborative filtering
+Integration of collaborative filtering
 
-Integrate TMDB API for movie posters
+Addition of movie posters via external APIs
 
-Improve ranking logic
+Improved ranking strategy
 
-Deploy with database-backed user tracking
+Recommendation evaluation metrics
 
-Add advanced recommendation evaluation metrics
+Database-backed user tracking
 
-👩‍💻 Author
+11. Author
 
-Shruti
+Shruti Kumari
 Computer Science Undergraduate
-Machine Learning & AI Enthusiast
-
+Machine Learning Enthusiast
