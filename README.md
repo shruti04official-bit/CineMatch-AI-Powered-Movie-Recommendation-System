@@ -1,60 +1,29 @@
-Content-Based Movie Recommendation System
-1. Introduction
+🎬 CineMatch – AI-Powered Movie Recommendation System
+AI-Powered Content-Based Movie Recommendation System
+<p align="center"> <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python" /> <img src="https://img.shields.io/badge/Streamlit-Web%20App-red?style=for-the-badge&logo=streamlit" /> <img src="https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge&logo=scikitlearn" /> <img src="https://img.shields.io/badge/Deployment-Render-purple?style=for-the-badge" /> </p>
+🌐 Live Application
 
-This project implements a Content-Based Movie Recommendation System using Python and Streamlit.
-The system recommends movies based on genre similarity by applying TF-IDF vectorization and cosine similarity.
-
-The application is deployed on Render for public access.
-
-Live Application:
+🔗 Try the App Here:
 https://cinematch-ai-powered-movie.onrender.com/
 
-2. Objective
+📖 Overview
 
-The objective of this project is to:
+CineMatch is a machine learning–powered movie recommendation system that suggests similar movies based on genre similarity.
 
-Build a scalable content-based recommendation engine
+The system uses TF-IDF vectorization to transform movie genres into numerical feature representations and applies cosine similarity to identify the most relevant recommendations.
 
-Convert textual genre data into numerical feature vectors
+It is built with Python and deployed as an interactive web application using Streamlit on Render.
 
-Compute similarity between movies
+🎯 Problem Statement
 
-Deploy the system on a cloud platform
+Users often struggle to discover movies aligned with their preferences.
+Traditional recommendation systems either rely heavily on user history or require large-scale infrastructure.
 
-3. Methodology
-3.1 Data Processing
+This project demonstrates how a lightweight, scalable content-based recommendation engine can deliver accurate suggestions using only movie metadata.
 
-Movies and ratings datasets are loaded using Pandas
+🧠 System Architecture
 
-Duplicate titles are removed
-
-Missing values are handled
-
-Dataset size is optimized for deployment performance
-
-3.2 Feature Engineering
-
-Movie genres are extracted
-
-TF-IDF vectorization is applied to transform text into numerical vectors
-
-3.3 Similarity Computation
-
-Cosine similarity is calculated between movie vectors
-
-Top-N similar movies are retrieved dynamically
-
-3.4 Performance Optimization
-
-Dataset caching using @st.cache_data
-
-TF-IDF matrix caching using @st.cache_resource
-
-Reduced dataset size for cloud hosting efficiency
-
-4. System Architecture
-
-Input (Selected Movie)
+User Input (Selected Movie)
 ↓
 Genre Extraction
 ↓
@@ -62,78 +31,104 @@ TF-IDF Vectorization
 ↓
 Cosine Similarity Computation
 ↓
-Top-N Similar Movies
+Ranked Similar Movies
 ↓
-Recommendation Display (Streamlit UI)
+Top-N Recommendations Displayed
 
-5. Features
+⚙️ How It Works
+1️⃣ Data Processing
 
-Interactive web interface using Streamlit
+Loads movies.csv and ratings.csv
 
-Movie selection from dropdown
+Removes duplicate titles
 
-Configurable number of recommendations
+Handles missing values
 
-Efficient similarity computation
+Optimizes dataset size for cloud deployment
 
-Cloud deployment ready
+2️⃣ Feature Engineering
 
-6. Technology Stack
+Extracts genre information
 
-Python 3
+Applies TF-IDF transformation
 
-Streamlit
+Builds a feature matrix for similarity comparison
 
-Pandas
+3️⃣ Similarity Computation
 
-Scikit-Learn (TF-IDF, Cosine Similarity)
+Computes cosine similarity dynamically
 
-Render (Deployment Platform)
+Ranks movies by similarity score
 
-7. Project Structure
-Movie-Recommendation-System/
+Returns configurable Top-N results
+
+4️⃣ Optimization Techniques
+
+@st.cache_data for dataset caching
+
+@st.cache_resource for model caching
+
+Reduced memory footprint for free-tier hosting
+
+🚀 Key Features
+
+✔ Content-Based Filtering
+✔ Real-Time Similarity Computation
+✔ User-Based Filtering (excludes watched movies)
+✔ Cold-Start Handling
+✔ Interactive Sidebar Controls
+✔ Cloud Deployment Ready
+✔ Clean Dark-Theme UI
+
+🛠 Tech Stack
+Layer	Technology
+Programming Language	Python 3
+Frontend Framework	Streamlit
+Data Handling	Pandas
+Machine Learning	Scikit-Learn
+Vectorization	TF-IDF
+Similarity Metric	Cosine Similarity
+Deployment	Render
+📂 Project Structure
+CineMatch-AI-Powered-Movie-Recommendation-System/
 │
-├── app.py
-├── movies.csv
-├── ratings.csv
-├── requirements.txt
+├── app.py                # Main Streamlit application
+├── movies.csv            # Movie dataset
+├── ratings.csv           # User ratings dataset
+├── requirements.txt      # Project dependencies
 └── README.md
-8. Installation and Setup
-Step 1: Clone Repository
+💻 Local Setup
+Clone Repository
 git clone https://github.com/shruti04official-bit/CineMatch-AI-Powered-Movie-Recommendation-System.git
 cd CineMatch-AI-Powered-Movie-Recommendation-System
-Step 2: Create Virtual Environment
-python -m venv .venv
-.venv\Scripts\activate
-Step 3: Install Dependencies
+Install Dependencies
 pip install -r requirements.txt
-Step 4: Run Application
+Run Application
 streamlit run app.py
-9. Deployment
+🌍 Deployment Configuration (Render)
 
-The application is deployed on Render.
-
-Build Command:
+Build Command
 
 pip install -r requirements.txt
 
-Start Command:
+Start Command
 
 streamlit run app.py --server.port 10000 --server.address 0.0.0.0
-10. Future Improvements
+📈 Future Enhancements
 
-Integration of collaborative filtering
+Integration with TMDB API for movie posters
 
-Addition of movie posters via external APIs
+Advanced hybrid weighting strategy
 
-Improved ranking strategy
+Recommendation evaluation metrics (Precision@K, Recall@K)
 
-Recommendation evaluation metrics
+Database-backed user personalization
 
-Database-backed user tracking
+Improved UI with movie card grid layout
 
-11. Author
+👩‍💻 Author
 
-Shruti Kumari
-Computer Science Undergraduate
-Machine Learning Enthusiast
+
+
+
+
